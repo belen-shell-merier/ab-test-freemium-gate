@@ -73,11 +73,10 @@ I split players by engagement: 30+ rounds (likely reached the gate) vs. fewer.
 - **A possible explanation (hypothesis, not tested here):** an earlier break may slow players down and keep the game from getting boring, a form of hedonic adaptation from behavioral economics.
 
 ## How I used AI
-I used Claude Code to automate the execution: it wrote and ran the code and drafted the write-up, while I designed the analysis, made the calls and reviewed every result.
+I directed the analysis; Claude Code handled the execution. I designed the test and made every analytical decision (the primary metric, the minimum detectable effect, the outlier rule, how to treat the borderline SRM and the final recommendation) and set the checks the results had to pass. Claude Code wrote and ran the code and drafted the text, which I reviewed and edited.
 
-- **My decisions:** the primary metric, the minimum detectable effect, the outlier rule, how to treat the borderline SRM and the final recommendation.
-- **How I checked the work:** I re-ran the notebook from scratch, reproduced the key numbers with two independent methods (SQL vs. pandas, z-test vs. bootstrap) and checked every variable definition against the dataset documentation.
-- **What that caught:** the rounds column covers a player's first 14 days, not one week, which changed the outlier reasoning and the caveat on the segment analysis.
+- **Checks:** the notebook re-run from scratch, the key numbers reproduced with two independent methods (SQL vs. pandas, z-test vs. bootstrap) and every variable definition checked against the dataset documentation.
+- **What they caught:** the rounds column covers a player's first 14 days, not one week, which changed the outlier reasoning and the caveat on the segment analysis.
 
 ## Files
 - [`ab_test_cookie_cats.ipynb`](ab_test_cookie_cats.ipynb): the full analysis, step by step.
